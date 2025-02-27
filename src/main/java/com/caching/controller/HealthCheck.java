@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @RestController
 public class HealthCheck {
 
-    @GetMapping("/health-check")
+    @GetMapping("/")
     public ResponseEntity<GeneralResponse> healthCheck(){
         String currentTimestamp = LocalDateTime.now().toString();
         GeneralResponse response = new GeneralResponse("SUCCESS", "WebServer Running!", currentTimestamp);
