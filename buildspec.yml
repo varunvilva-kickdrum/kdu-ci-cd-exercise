@@ -1,13 +1,13 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
-      java: corretto17  # Uses Amazon Corretto 17
+      java: corretto17
   build:
     commands:
-      - echo "Building the application using Maven..."
-      - mvn clean package -DskipTests
+      - echo "Building the project..."
+      - mvn clean package
+      - cp target/*.jar application.jar
 artifacts:
   files:
-    - '**/*'
+    - application.jar
